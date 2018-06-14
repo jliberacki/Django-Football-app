@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Add Match</title>
+</head>
+
+<body>
+    <form action="{% url 'add_match' %}" method="post">
+        {% csrf_token %}
+        <label for="hname">Home Team Name</label>
+        <br />
+        <input type="text" name="hname" id="hname" />
+        <br>
+        <label for="aname">Away Team Name</label>
+        <br />
+        <input type="text" name="aname" id="aname" />
+        <br>
+        <label for="res">Result</label>
+        <br />
+        <input type="text" name="res" id="res" />
+        <br>
+        <input type="submit" value="Submit" />
+    </form>
+    <br> {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+    </ul>
+    {% endif %}
+
+</body>
+
+</html>

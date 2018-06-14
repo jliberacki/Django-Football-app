@@ -1,0 +1,28 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Add Squad</title>
+</head>
+
+<body>
+    <form action="{% url 'add_squad' %}" method="post">
+        {% csrf_token %}
+        <label for="name">Squad Name</label>
+        <br />
+        <input type="text" name="name" id="name" />
+        <br>
+        <label for="text">Text</label>
+        <br />
+        <textarea name="text" id="text"></textarea>
+        <br>
+        <br>
+        <input type="submit" value="Submit" />
+    </form>
+    <br>
+
+</body>
+
+</html>

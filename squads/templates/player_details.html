@@ -1,0 +1,22 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Player Details</title>
+</head>
+
+<body>
+    <header>
+        <h1>Player: {{player.first_name}} {{player.last_name}}</h1>
+        <h2>Position: {{player.position}}</h2>
+        <h2>Number: {{player.number}}</h2>
+        <form method="POST">
+                {% csrf_token %}
+                <input type="submit" value="Delete"/>
+              </form>
+    </ul>
+</body>
+
+</html>

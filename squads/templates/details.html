@@ -1,0 +1,24 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Details</title>
+</head>
+
+<body>
+    <header>
+        <h1>Squad: {{squad.name}}</h1>
+        <h2>{{squad.informations}}</h2>
+        <a href="/squads/add_player/{{squad.id}}">Add Player</a>
+        <hr>
+    </header>
+    <ul>
+        {% for player in players %}
+        <li><a href="/squads/player_details/{{player.id}}"> {{player.first_name}} {{player.last_name}}</a> </li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Squads</title>
+</head>
+
+<body>
+    <header>
+        <h1>Squad List</h1>
+        <a href="/squads/add_squad">Add Squad</a>
+        <hr>
+    </header>
+    <ul>
+        {% for squad in squads %}
+        <li>
+            <a href="/squads/details/{{squad.id}}"> {{squad.name}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <hr>
+    <h2>Matches:</h2>
+    <a href="/squads/add_match">Add Match</a>
+    <ul>
+        {% for match in matches %}
+        <li>
+            {{match.home_team.name}} {{match.result}} {{match.away_team.name}}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
